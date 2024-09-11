@@ -69,13 +69,12 @@ ventas.mostrar_ventas()
 
 # Buscar una venta
 departamento = ventas.obtener_datos_usuario("Ingrese el departamento para buscar(0 = Ropa, 1 = Deportes, 2 = Juguetería): ")
-mes = ventas.obtener_datos_usuario("Ingrese el mes (1-12): ") - 1
+mes = ventas.obtener_datos_usuario("Ingrese el mes (0-11): ") 
 venta_encontrada = ventas.buscar_venta(departamento, mes)
 if venta_encontrada is not None: # Esta línea de código es una condicional. Lo que hace es verificar si la variable venta_encontrada tiene un valor asignado
     print(f"Venta encontrada: ${venta_encontrada:.2f}")
 
 # Eliminar una venta
 departamento = int(input("Eliminar venta (0 = Ropa, 1 = Deportes, 2 = Juguetería): "))
-mes = int(input("Ingrese el mes (1-12): ")) - 1
+mes = int(input("Ingrese el mes (0-11): ")) 
 ventas.eliminar_venta(departamento, mes)
-# Al restar 1 al valor ingresado por el usuario, estamos ajustando el valor para que coincida con el índice de la lista de meses, que comienza en 0
